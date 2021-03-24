@@ -3,13 +3,14 @@ package mx.edu.utez.resto.document;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Entity
 public class PromocionEntity {
 	@Id
 	private String idPromocion;
