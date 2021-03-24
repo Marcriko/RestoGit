@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.PedidoEntity;
 
 @Repository
-public interface PedidoRepository extends JpaRepository<PedidoEntity, String>{
+public interface PedidoRepository extends JpaRepository<PedidoEntity, Long>{
 
 }

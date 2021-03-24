@@ -13,15 +13,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class EstadoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idEstado;
+	private int idEstado;
 	@NotBlank
 	@NotNull
 	private String estado;
 	//
-	public String getIdEstado() {
+	public int getIdEstado() {
 		return idEstado;
 	}
-	public void setIdEstado(String idEstado) {
+	public void setIdEstado(int idEstado) {
 		this.idEstado = idEstado;
 	}
 	public String getEstado() {

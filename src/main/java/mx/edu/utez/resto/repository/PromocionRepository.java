@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.PromocionEntity;
 
 @Repository
-public interface PromocionRepository extends JpaRepository<PromocionEntity, String>{
+public interface PromocionRepository extends JpaRepository<PromocionEntity, Long>{
 
 }

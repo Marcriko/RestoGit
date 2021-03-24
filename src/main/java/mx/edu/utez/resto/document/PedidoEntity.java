@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PedidoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idPedido;
+	private int idPedido;
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull
@@ -30,10 +30,10 @@ public class PedidoEntity {
 	@NotNull
 	private EstadoEntity estado;
 	//
-	public String getIdPedido() {
+	public int getIdPedido() {
 		return idPedido;
 	}
-	public void setIdPedido(String idPedido) {
+	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
 	public List<PlatilloEntity> getPlatillos() {

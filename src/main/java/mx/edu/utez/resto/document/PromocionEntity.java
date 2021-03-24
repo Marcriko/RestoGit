@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Entity
 public class PromocionEntity {
 	@Id
-	private String idPromocion;
+	private int idPromocion;
 	@NotBlank
 	@NotNull
 	private String descripcion;
@@ -33,10 +33,10 @@ public class PromocionEntity {
 	@NotNull
 	private Double precioPromocion;
 	//
-	public String getIdPromocion() {
+	public int getIdPromocion() {
 		return idPromocion;
 	}
-	public void setIdPromocion(String idPromocion) {
+	public void setIdPromocion(int idPromocion) {
 		this.idPromocion = idPromocion;
 	}
 	public String getDescripcion() {

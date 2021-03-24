@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.CuponEntity;
 
 @Repository
-public interface CuponRepository extends JpaRepository<CuponEntity, String>{
+public interface CuponRepository extends JpaRepository<CuponEntity, Long>{
 
 }

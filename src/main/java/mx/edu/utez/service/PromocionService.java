@@ -20,9 +20,9 @@ public class PromocionService {
 	}
 	
 	public boolean save (PromocionEntity promocionEntity) {
-		return promocionRepository.existsById(promocionRepository.save(promocionEntity).getIdPromocion());
+		return promocionRepository.existsById((long) promocionRepository.save(promocionEntity).getIdPromocion());
 	}
-	public boolean delete(String id) {
+	public boolean delete(Long id) {
 		promocionRepository.deleteById(id);
 		return !promocionRepository.existsById(id);
 	}

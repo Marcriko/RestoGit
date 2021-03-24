@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.PersonaEntity;
 
 @Repository
-public interface PersonaRepository extends JpaRepository<PersonaEntity, String>{
+public interface PersonaRepository extends JpaRepository<PersonaEntity, Long>{
 
 }

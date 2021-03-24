@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PersonaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idPersona;
+	private int idPersona;
 	@NotBlank
 	@NotNull
 	private String nombre;
@@ -37,10 +37,10 @@ public class PersonaEntity {
 	private String password;
 	private RolEntity role;
 	//
-	public String getIdPersona() {
+	public int getIdPersona() {
 		return idPersona;
 	}
-	public void setIdPersona(String idPersona) {
+	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;
 	}
 	public String getNombre() {

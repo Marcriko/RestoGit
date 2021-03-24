@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.RolEntity;
 
 @Repository
-public interface RolRepository extends JpaRepository<RolEntity, String>{
+public interface RolRepository extends JpaRepository<RolEntity, Long>{
 
 }

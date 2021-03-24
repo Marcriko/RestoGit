@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CuponEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idCupon;
+	private int idCupon;
 	@NotBlank
 	@NotNull
 	private Date fechaInicio;
@@ -33,10 +33,10 @@ public class CuponEntity {
 	@NotNull
 	private Integer limiteUsos;
 	//
-	public String getIdCupon() {
+	public int getIdCupon() {
 		return idCupon;
 	}
-	public void setIdCupon(String idCupon) {
+	public void setIdCupon(int idCupon) {
 		this.idCupon = idCupon;
 	}
 	public Date getFechaInicio() {

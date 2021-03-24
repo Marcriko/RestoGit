@@ -20,10 +20,10 @@ public class PlatilloService {
 	}
 	
 	public boolean save(PlatilloEntity platilloEntity) {
-		return platilloRepository.existsById(platilloRepository.save(platilloEntity).getIdPlatillo());
+		return platilloRepository.existsById((long) platilloRepository.save(platilloEntity).getIdPlatillo());
 	}
 	
-	public boolean delete(String id) {
+	public boolean delete(Long id) {
 		platilloRepository.deleteById(id);
 		return !platilloRepository.existsById(id);
 	}

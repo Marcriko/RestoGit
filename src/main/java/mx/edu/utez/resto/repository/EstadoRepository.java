@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.EstadoEntity;
 
 @Repository
-public interface EstadoRepository extends JpaRepository<EstadoEntity, String>{
+public interface EstadoRepository extends JpaRepository<EstadoEntity, Long>{
 
 }

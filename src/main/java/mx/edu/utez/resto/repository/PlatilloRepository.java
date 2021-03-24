@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.PlatilloEntity;
 
 @Repository
-public interface PlatilloRepository extends JpaRepository<PlatilloEntity, String>{
+public interface PlatilloRepository extends JpaRepository<PlatilloEntity, Long>{
 
 }

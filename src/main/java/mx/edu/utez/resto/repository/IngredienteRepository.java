@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import mx.edu.utez.resto.document.IngredienteEntity;
 
 @Repository
-public interface IngredienteRepository extends JpaRepository<IngredienteEntity, String>{
+public interface IngredienteRepository extends JpaRepository<IngredienteEntity, Long>{
 
 }

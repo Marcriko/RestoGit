@@ -14,15 +14,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class IngredienteEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idIngrediente;
+	private int idIngrediente;
 	@NotBlank
 	@NotNull
 	private String nombre;
 	//
-	public String getIdIngrediente() {
+	public int getIdIngrediente() {
 		return idIngrediente;
 	}
-	public void setIdIngrediente(String idIngrediente) {
+	public void setIdIngrediente(int idIngrediente) {
 		this.idIngrediente = idIngrediente;
 	}
 	public String getNombre() {

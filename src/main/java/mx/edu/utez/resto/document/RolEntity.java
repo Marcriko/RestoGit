@@ -14,15 +14,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class RolEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idRol;
+	private int idRol;
 	@NotBlank
 	@NotNull
 	private String role;
 	//
-	public String getIdRol() {
+	public int getIdRol() {
 		return idRol;
 	}
-	public void setIdRol(String idRol) {
+	public void setIdRol(int idRol) {
 		this.idRol = idRol;
 	}
 	public String getRole() {
