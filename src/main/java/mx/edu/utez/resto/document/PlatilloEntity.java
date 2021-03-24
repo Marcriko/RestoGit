@@ -5,13 +5,17 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
+@Table(name = "platillo")
 public class PlatilloEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +29,7 @@ public class PlatilloEntity {
 	@NotBlank
 	@NotNull
 	private Double precio;
+	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 	//
 	public int getIdPlatillo() {

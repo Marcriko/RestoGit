@@ -4,13 +4,18 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
+@Table(name = "promocion")
 public class PromocionEntity {
 	@Id
 	private int idPromocion;
@@ -28,6 +33,7 @@ public class PromocionEntity {
 	private Date fechaFin;
 	@NotBlank
 	@NotNull
+	@ManyToMany
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull

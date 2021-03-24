@@ -6,28 +6,40 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
+@Table(name = "pedido")
 public class PedidoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPedido;
+	@ManyToMany
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull
+	@ManyToOne
 	private PersonaEntity cliente;
 	@NotBlank
 	@NotNull
 	private Date fecha;
+	@ManyToOne
 	private PromocionEntity promocion;
+	@ManyToOne
 	private CuponEntity cupon;
 	@NotBlank
 	@NotNull
+	@ManyToOne
 	private EstadoEntity estado;
 	//
 	public int getIdPedido() {
