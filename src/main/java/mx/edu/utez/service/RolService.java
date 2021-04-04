@@ -20,10 +20,10 @@ public class RolService {
 	}
 	
 	public boolean save(RolEntity rol) {
-		return rolRepository.existsById((long) rolRepository.save(rol).getIdRol());
+		return rolRepository.existsById((String) rolRepository.save(rol).getIdRol());
 	}
 	
-	public boolean delete (Long id) {
+	public boolean delete (String id) {
 		rolRepository.deleteById(id);
 		return rolRepository.existsById(id);
 	}

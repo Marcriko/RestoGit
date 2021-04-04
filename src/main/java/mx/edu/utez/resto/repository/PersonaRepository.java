@@ -7,5 +7,5 @@ import mx.edu.utez.resto.document.PersonaEntity;
 
 @Repository
 public interface PersonaRepository extends MongoRepository<PersonaEntity, String>{
-
+	PersonaEntity findByUsername(String username);
 }
