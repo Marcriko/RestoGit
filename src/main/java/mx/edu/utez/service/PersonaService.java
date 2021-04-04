@@ -19,9 +19,9 @@ public class PersonaService {
 		return personaRepository.findAll();
 	}
 	public boolean save(PersonaEntity personaEntity) {
-		return personaRepository.existsById((long) personaRepository.save(personaEntity).getIdPersona());
+		return personaRepository.existsById((String) personaRepository.save(personaEntity).getIdPersona());
 	}
-	public boolean delete(Long id) {
+	public boolean delete(String id) {
 		personaRepository.deleteById(id);
 		return !personaRepository.existsById(id);
 	}

@@ -21,10 +21,10 @@ public class CuponService {
 	}
 	
 	public boolean save(CuponEntity cuponEntity) {
-		return cuponRepository.existsById((long) cuponRepository.save(cuponEntity).getIdCupon());
+		return cuponRepository.existsById((String) cuponRepository.save(cuponEntity).getIdCupon());
 	}
 	
-	public boolean delete(Long id) {
+	public boolean delete(String id) {
 		cuponRepository.deleteById(id);
 		return !cuponRepository.existsById(id);
 	}

@@ -20,10 +20,10 @@ public class PedidoService {
 	}
 	
 	public boolean save(PedidoEntity pedidoEntity) {
-		return pedidoRepository.existsById((long) pedidoRepository.save(pedidoEntity).getIdPedido());
+		return pedidoRepository.existsById((String) pedidoRepository.save(pedidoEntity).getIdPedido());
 	}
 	
-	public boolean delete(Long id) {
+	public boolean delete(String id) {
 		pedidoRepository.deleteById(id);
 		return !pedidoRepository.existsById(id);
 	}

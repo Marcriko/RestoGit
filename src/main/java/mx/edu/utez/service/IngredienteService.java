@@ -20,10 +20,10 @@ public class IngredienteService {
 	}
 	
 	public boolean save(IngredienteEntity entity) {
-		return repository.existsById((long) repository.save(entity).getIdIngrediente());
+		return repository.existsById((String) repository.save(entity).getIdIngrediente());
 	}
 	
-	public boolean deleteById (Long id) {
+	public boolean deleteById (String id) {
 		repository.deleteById(id);
 		return !repository.existsById(id);
 	}
