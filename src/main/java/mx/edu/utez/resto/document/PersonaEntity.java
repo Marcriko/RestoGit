@@ -1,22 +1,15 @@
 package mx.edu.utez.resto.document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "persona")
+@Document
 public class PersonaEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPersona;
+	private String idPersona;
 	@NotBlank
 	@NotNull
 	private String nombre;
@@ -38,13 +31,12 @@ public class PersonaEntity {
 	@NotBlank
 	@NotNull
 	private String password;
-	@ManyToOne
 	private RolEntity role;
 	//
-	public int getIdPersona() {
+	public String getIdPersona() {
 		return idPersona;
 	}
-	public void setIdPersona(int idPersona) {
+	public void setIdPersona(String idPersona) {
 		this.idPersona = idPersona;
 	}
 	public String getNombre() {

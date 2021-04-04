@@ -3,22 +3,16 @@ package mx.edu.utez.resto.document;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "cupon")
+@Document
 public class CuponEntity {
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int id;
+	private String idCupon;
 	@NotBlank
 	@NotNull
 	private Date fechaInicio;
@@ -30,17 +24,16 @@ public class CuponEntity {
 	private Double descuento;
 	@NotBlank
 	@NotNull
-	@ManyToMany
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull
 	private Integer limiteUsos;
 	//
-	public int getIdCupon() {
-		return id;
+	public String getIdCupon() {
+		return idCupon;
 	}
-	public void setIdCupon(int idCupon) {
-		this.id = idCupon;
+	public void setIdCupon(String idCupon) {
+		this.idCupon = idCupon;
 	}
 	public Date getFechaInicio() {
 		return fechaInicio;

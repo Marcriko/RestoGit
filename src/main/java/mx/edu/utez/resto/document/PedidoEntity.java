@@ -3,49 +3,33 @@ package mx.edu.utez.resto.document;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "pedido")
+@Document
 public class PedidoEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPedido;
-	@ManyToMany
+	private String idPedido;
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull
-	@ManyToOne
 	private PersonaEntity cliente;
 	@NotBlank
 	@NotNull
 	private Date fecha;
-	@ManyToOne
 	private PromocionEntity promocion;
-	@ManyToOne
 	private CuponEntity cupon;
 	@NotBlank
 	@NotNull
-	@ManyToOne
 	private EstadoEntity estado;
 	//
-	public int getIdPedido() {
+	public String getIdPedido() {
 		return idPedido;
 	}
-	public void setIdPedido(int idPedido) {
+	public void setIdPedido(String idPedido) {
 		this.idPedido = idPedido;
 	}
 	public List<PlatilloEntity> getPlatillos() {

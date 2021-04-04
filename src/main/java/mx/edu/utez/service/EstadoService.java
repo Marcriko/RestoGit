@@ -20,10 +20,10 @@ public class EstadoService {
 	}
 	
 	public boolean saveEstado(EstadoEntity entity) {
-		return estadoRepository.existsById((long) estadoRepository.save(entity).getIdEstado());
+		return estadoRepository.existsById((String) estadoRepository.save(entity).getIdEstado());
 	}
 	
-	public boolean deleteEstado(Long id) {
+	public boolean deleteEstado(String id) {
 		estadoRepository.deleteById(id);
 		return !estadoRepository.existsById(id);
 	}

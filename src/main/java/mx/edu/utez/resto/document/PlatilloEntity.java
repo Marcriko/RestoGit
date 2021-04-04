@@ -2,24 +2,16 @@ package mx.edu.utez.resto.document;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "platillo")
+@Document
 public class PlatilloEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPlatillo;
+	private String idPlatillo;
 	@NotBlank
 	@NotNull
 	private String nombre;
@@ -29,13 +21,12 @@ public class PlatilloEntity {
 	@NotBlank
 	@NotNull
 	private Double precio;
-	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 	//
-	public int getIdPlatillo() {
+	public String getIdPlatillo() {
 		return idPlatillo;
 	}
-	public void setIdPlatillo(int idPlatillo) {
+	public void setIdPlatillo(String idPlatillo) {
 		this.idPlatillo = idPlatillo;
 	}
 	public String getNombre() {

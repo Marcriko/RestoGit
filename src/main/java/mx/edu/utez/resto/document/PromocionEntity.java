@@ -3,22 +3,16 @@ package mx.edu.utez.resto.document;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "promocion")
+@Document
 public class PromocionEntity {
 	@Id
-	private int idPromocion;
+	private String idPromocion;
 	@NotBlank
 	@NotNull
 	private String descripcion;
@@ -33,16 +27,15 @@ public class PromocionEntity {
 	private Date fechaFin;
 	@NotBlank
 	@NotNull
-	@ManyToMany
 	private List<PlatilloEntity> platillos;
 	@NotBlank
 	@NotNull
 	private Double precioPromocion;
 	//
-	public int getIdPromocion() {
+	public String getIdPromocion() {
 		return idPromocion;
 	}
-	public void setIdPromocion(int idPromocion) {
+	public void setIdPromocion(String idPromocion) {
 		this.idPromocion = idPromocion;
 	}
 	public String getDescripcion() {
